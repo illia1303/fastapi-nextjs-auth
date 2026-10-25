@@ -232,3 +232,6 @@ frontend/yarn-debug.log*
 frontend/yarn-error.log*
 frontend/.pnpm-debug.log*
 .DS_Store
+
+# PyCharm
+.idea/
