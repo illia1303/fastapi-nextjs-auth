@@ -37,11 +37,11 @@ export default function RegisterPage() {
   };
 
   const inputClass =
-    "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition";
+    "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition dark:border-neutral-700 dark:bg-neutral-800";
 
   return (
     <main className="flex items-center justify-center min-h-screen px-4">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md dark:bg-neutral-900">
 
         <h1 className="text-2xl font-bold text-center mb-6">Регистрация</h1>
 
@@ -91,7 +91,7 @@ export default function RegisterPage() {
           </div>
 
           {error && (
-            <p role="alert" className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">{error}</p>
+            <p role="alert" className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg dark:text-red-400 dark:bg-red-950/50">{error}</p>
           )}
 
           <button
@@ -103,9 +103,9 @@ export default function RegisterPage() {
           </button>
         </form>
 
-        <p className="text-sm text-center text-gray-600 mt-6">
+        <p className="text-sm text-center text-gray-600 mt-6 dark:text-neutral-400">
           Уже есть аккаунт?{" "}
-          <Link href="/" className="text-blue-600 hover:underline font-medium">
+          <Link href="/" className="text-blue-600 hover:underline font-medium dark:text-blue-400">
             Войти
           </Link>
         </p>

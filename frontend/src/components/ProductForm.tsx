@@ -66,10 +66,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({ onCreated, onUnauthori
 
   return (
     // Внешняя карточка: белый фон, отступы, скругление, тень, рамка, отступ снизу (mb-8)
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8">
+    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 dark:bg-neutral-900 dark:border-neutral-800">
 
       {/* Заголовок формы: крупный жирный текст с отступом снизу */}
-      <h2 className="text-xl font-bold text-gray-900 mb-4">Добавить новый товар</h2>
+      <h2 className="text-xl font-bold text-gray-900 mb-4 dark:text-neutral-100">Добавить новый товар</h2>
 
       {/* Тег form. onSubmit срабатывает при нажатии кнопки submit или Enter в поле.
           flex-col — на мобильных поля идут столбиком;
@@ -80,7 +80,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ onCreated, onUnauthori
         {/* Блок поля "Название". flex-1 — занимает равную долю ширины */}
         <div className="flex-1">
           {/* Подпись над полем: htmlFor связывает её с input по id */}
-          <label htmlFor="product-title" className="block text-sm font-medium text-gray-700 mb-1">Название товара</label>
+          <label htmlFor="product-title" className="block text-sm font-medium text-gray-700 mb-1 dark:text-neutral-300">Название товара</label>
 
           <input
             id="product-title"
@@ -97,13 +97,13 @@ export const ProductForm: React.FC<ProductFormProps> = ({ onCreated, onUnauthori
 
             // Серая подсказка внутри пустого поля
             placeholder="Например, MacBook Pro"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition dark:border-neutral-700 dark:bg-neutral-800"
           />
         </div>
 
         {/* Блок поля "Цена", устроен так же, как "Название" */}
         <div className="flex-1">
-          <label htmlFor="product-price" className="block text-sm font-medium text-gray-700 mb-1">Цена, ₽</label>
+          <label htmlFor="product-price" className="block text-sm font-medium text-gray-700 mb-1 dark:text-neutral-300">Цена, ₽</label>
 
           <input
             id="product-price"
@@ -115,7 +115,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ onCreated, onUnauthori
             value={price}                              // значение берётся из state
             onChange={(e) => setPrice(e.target.value)} // записываем введённое в state (как строку)
             placeholder="Например, 2500"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition dark:border-neutral-700 dark:bg-neutral-800"
           />
         </div>
 
@@ -135,7 +135,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ onCreated, onUnauthori
 
       {/* Ошибка от сервера — показываем только если она есть */}
       {error && (
-        <p role="alert" className="mt-4 text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">{error}</p>
+        <p role="alert" className="mt-4 text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg dark:text-red-400 dark:bg-red-950/50">{error}</p>
       )}
     </div>
   );

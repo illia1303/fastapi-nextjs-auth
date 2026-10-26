@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Auth & Products App",
@@ -15,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body className={`${inter.className} bg-gray-50 min-h-screen text-gray-900`}>
+    <html lang="ru" className="scheme-light-dark">
+      <body
+        className={`${inter.className} min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-[#ededed]`}
+      >
         {children}
       </body>
     </html>

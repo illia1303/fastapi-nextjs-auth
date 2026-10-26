@@ -69,13 +69,13 @@ export default function ProductsPage() {
     <main className="max-w-5xl mx-auto px-4 py-8">
 
       <header className="flex flex-wrap items-center justify-between gap-4 mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Товары</h1>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-neutral-100">Товары</h1>
         <div className="flex items-center gap-4">
-          {user && <span className="text-sm text-gray-600 break-all">{user.email}</span>}
+          {user && <span className="text-sm text-gray-600 break-all dark:text-neutral-400">{user.email}</span>}
           <button
             type="button"
             onClick={logout}
-            className="text-sm font-medium text-gray-700 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="text-sm font-medium text-gray-700 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors dark:text-neutral-300 dark:border-neutral-700 dark:hover:bg-neutral-800"
           >
             Выйти
           </button>
@@ -84,14 +84,14 @@ export default function ProductsPage() {
 
       <ProductForm onCreated={handleCreated} onUnauthorized={goToLogin} />
 
-      {loading && <p className="text-gray-500">Загрузка...</p>}
+      {loading && <p className="text-gray-500 dark:text-neutral-400">Загрузка...</p>}
 
       {error && (
-        <p role="alert" className="text-red-600 bg-red-50 px-4 py-3 rounded-lg">{error}</p>
+        <p role="alert" className="text-red-600 bg-red-50 px-4 py-3 rounded-lg dark:text-red-400 dark:bg-red-950/50">{error}</p>
       )}
 
       {!loading && !error && products.length === 0 && (
-        <p className="text-gray-500 text-center py-12">Товаров пока нет — добавьте первый.</p>
+        <p className="text-gray-500 text-center py-12 dark:text-neutral-400">Товаров пока нет — добавьте первый.</p>
       )}
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
